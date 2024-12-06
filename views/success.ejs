@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Success</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f3f4f6;
+      font-family: 'Arial', sans-serif;
+    }
+    .success-container {
+      text-align: center;
+      background: #ffffff;
+      padding: 20px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    .success-icon {
+      width: 60px;
+      height: 60px;
+      border: 4px solid #4caf50;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 15px;
+    }
+    .success-icon::before {
+      content: '✔';
+      font-size: 30px;
+      color: #4caf50;
+    }
+    .success-message {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .sub-message {
+      font-size: 14px;
+      color: #666;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="success-container">
+    <div class="success-icon"></div>
+    <p class="success-message"><%= message %></p>
+    <p class="sub-message">Redirecting you to the Home page...</p>
+  </div>
+
+  <script>
+    // Redirect to home page after 2 seconds
+    setTimeout(() => {
+      window.location.href = '/'; // Update with your home route
+    }, 2000);
+  </script>
+</body>
+</html>

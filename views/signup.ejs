@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+          
+            box-sizing: border-box;
+        }
+         .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgb(61, 61, 180);
+            width: 400px;
+            border-radius: 15px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 0px 0px 15px gray;
+
+         }
+         input{
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            border-bottom: 1px solid gray;
+            margin: 10px;
+         }
+         h2{
+            text-align: center;
+            color: rgb(40, 212, 40);
+            text-transform: uppercase;
+         }
+        button{
+            color: #fff;
+            background-color: green;
+            width: 300px;
+            border-radius: 15px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+
+        }
+        p{
+            text-align:center;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    
+   <div class="container">
+    <form action="/sign" method="post">
+        <h2>Register</h2>
+        <input type="text"  placeholder="Enter your Name" name="username" required><br>
+        <input type="email"  placeholder="Enter your Email" name="email" required><br>
+        <input type="password"  placeholder="Enter your Password" name="password" required><br>
+        <button type="submit" align="center">Register</button>
+        
+            <p>Already you have Account?  <a href="/login-page">  Log in</a></p>
+        
+    </form>
+   </div>
+    
+</body>
+</html>

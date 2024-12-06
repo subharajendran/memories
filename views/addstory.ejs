@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Dairy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<style>
+    .lobster-regular {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.button {
+    background-color: #e6bce6;
+    color: #000;
+    font-family: 'Georgia', serif;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #c7a1c7 ;
+    color: #F8F8F8;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    background: linear-gradient(135deg, #FAD0C4, #FFD1FF,rgb(156, 188, 201));
+    width: 100%;
+    border-radius: 5px;
+}
+.header{
+    margin-left:20px ;
+    font-size: 26px;
+    color: dimgray;
+}
+.add{
+    margin-right: 20px;
+}
+
+/* Diary Entry Form Styling */
+.diary-entry-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+.diary-entry-form h1 {
+    font-size: 28px;
+    color: #8C5E58;
+    margin-bottom: 20px;
+}
+
+.diary-entry-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.diary-entry-form input,
+.diary-entry-form textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.diary-entry-form button {
+    background-color: #8C5E58;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.diary-entry-form button:hover {
+    background-color: #A6796B;
+}
+footer{
+    /* text-align: right; */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+   </style>
+</head>
+<body>
+    <nav>
+        <div class="header">
+            <h1 class="lobster-regular">Memoirs & Moments</h1>
+        </div>
+        
+    </nav>
+
+    <main>
+        <section class="diary-entry-form">
+            <h1>Create a New Diary Entry</h1>
+
+            <form action="/addstory" method="POST">
+                <label for="entry-title">Title</label>
+                <input type="text" id="entry-title" name="entrytitle" required placeholder="Enter a title...">
+
+                <label for="entry-date">Date</label>
+                <input type="date" id="entry-date" name="entrydate" required>
+
+                <label for="entry-content">Memories</label>
+                <textarea id="entry-content" name="entrycontent" rows="5" placeholder="Write your diary entry here..." required></textarea>
+
+                <button type="submit">Save Memories</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Personal Diary Developed by Subha</p>
+    </footer>
+</body>
+</html>

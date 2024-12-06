@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Failed</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #fdf3f3;
+      font-family: 'Arial', sans-serif;
+    }
+    .fail-container {
+      text-align: center;
+      background: #ffffff;
+      padding: 20px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    .fail-icon {
+      width: 60px;
+      height: 60px;
+      border: 4px solid #f44336;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 15px;
+    }
+    .fail-icon::before {
+      content: '✖';
+      font-size: 30px;
+      color: #f44336;
+    }
+    .fail-message {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .sub-message {
+      font-size: 14px;
+      color: #666;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="fail-container">
+    <div class="fail-icon"></div>
+    <p class="fail-message"><%= message %></p>
+    <p class="sub-message">Please check your credentials and try again.</p>
+  </div>
+
+  <script>
+    // Redirect to login page after 2 seconds
+    setTimeout(() => {
+      window.location.href = '/login'; // Update with your login route
+    }, 3000);
+  </script>
+</body>
+</html>

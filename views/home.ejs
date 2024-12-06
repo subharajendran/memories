@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Dairy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        .lobster-regular {
+            font-family: "Lobster", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .button {
+            background-color: #e6bce6;
+            color: #000;
+            font-family: 'Georgia', serif;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #c7a1c7;
+            color: #F8F8F8;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            align-items: center;
+            background: linear-gradient(135deg, #FAD0C4, #FFD1FF, rgb(156, 188, 201));
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .header {
+            margin-left: 20px;
+            font-size: 26px;
+            color: dimgray;
+        }
+
+        .add {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .about {
+            font-size: 20px;
+        }
+
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and general styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F4F4F9;
+            color: #333;
+        }
+
+        /* Header and navigation */
+        header {
+            background-color: #8C5E58;
+            color: white;
+            padding: 15px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content area */
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Diary entries section */
+        .diary-entries h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #8C5E58;
+            text-align: center;
+        }
+
+        /* Diary card styles */
+        .diary-card {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .diary-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .diary-card h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .diary-card .date {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .diary-card .entry-content {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .diary-card .read-more {
+            font-size: 16px;
+            color: #8C5E58;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .diary-card .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer styling */
+        footer {
+            /* text-align: right; */
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .authname {
+            color: black;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 7px 20px;
+            border: none;
+            border-radius: 15px;
+
+        }
+
+        .authname:hover {
+            border: 0.7px solid white;
+            border-radius: 10px;
+        }
+        /* General Button Styles */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Read Button Style */
+.read-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.read-button:hover {
+    background-color: #45a049; /* Darker Green */
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+/* Update Button Style */
+.update-button {
+    background-color: #FFA500; /* Orange */
+    color: white;
+}
+
+.update-button:hover {
+    background-color: #e69500; /* Darker Orange */
+    transform: scale(1.05);
+}
+
+/* Delete Button Style */
+.delete-button {
+    background-color: #F44336; /* Red */
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #e53935; /* Darker Red */
+    transform: scale(1.05);
+}
+
+/* Optional: Disabled button style */
+button:disabled {
+    background-color: #ddd;
+    color: #888;
+    cursor: not-allowed;
+}
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="header">
+            <h1 class="lobster-regular">Memoirs & Moments</h1>
+        </div>
+        <div class="add">
+            
+            
+                <div class="" style="margin-right:20px ;">
+                    <a href="/addstory"> <button class="button">Add Memories</button></a>
+                </div>
+                
+
+                        
+        </div>
+    </nav>
+    <main>
+        <section class="diary-entries">
+            <h1>My Diary</h1>
+            <% story.forEach(story=>{ %>
+            <div class="diary-card">
+                <h2> <%= story.title %></h2>
+                <p class="date"><%= story.date %></p>
+                <p class="entry-content"><%= story.story  %></p>
+                <form action="/read/<%= story._id %>" method="GET" style="display: inline;">
+                    <a href="" ><button class="read-button">Read more</button> </a>
+                </form>
+                
+            </div>
+            <% }) %>
+
+        
+
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Personal Diary Developed by Subha</p>
+    </footer>
+
+
+</body>
+
+</html>
